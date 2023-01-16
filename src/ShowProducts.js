@@ -7,7 +7,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
-function ProductsList() {
+function ShowProducts() {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
@@ -48,7 +48,7 @@ function ProductsList() {
     } else {
       console.log(key);
       let result = await fetch(
-        "http://127.0.0.1:8000/api/searchuser/" + key,
+        "http://127.0.0.1:8000/api/searchpro/" + key,
         {
           method: "GET",
         },
@@ -79,46 +79,6 @@ function ProductsList() {
           placeholder="Type here to Search Products"
         />
         <hr />
-        <Table striped bordered hover variant="dark">
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Product Name</th>
-              <th>Price</th>
-              <th>Description</th>
-              <th>Image</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((item, index) => (
-              <tr>
-                <td>{index + 1}</td>
-                <td>{item.name}</td>
-                <td>{item.price}</td>
-                <td>{item.description}</td>
-                <td>
-                  <img
-                    style={{ width: 100 }}
-                    src={"http://127.0.0.1:8000/" + item.file_path}
-                  ></img>
-                </td>
-                <td>
-                  <span
-                    className="btnDelete"
-                    onClick={() => deleteOperation(item.id)}
-                  >
-                    Delete
-                  </span>
-                  <Link to={"update/" + item.id} state={{}}>
-                    <span className="btnUpdate">Update</span>
-                  </Link>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
-
         <div className="row">
           {data.map((item) => (
             <div className="col-3">
@@ -172,4 +132,4 @@ function ProductsList() {
   }
 }
 
-export default ProductsList;
+export default ShowProducts;

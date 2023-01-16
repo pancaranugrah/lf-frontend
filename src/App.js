@@ -12,6 +12,10 @@ import AddProducts from "./AddProducts";
 import UpdateProducts from "./UpdateProducts";
 import ProductsList from "./ProductsList";
 import Wikipedia from "./Wikipedia";
+import Api from "./Api";
+import Home from "./Home";
+import ShowProducts from "./ShowProducts";
+import UserList from "./UserList";
 
 function App() {
   function ProfilePage() {
@@ -31,10 +35,16 @@ function App() {
             path="/update/:id"
             element={<Protected Cmp={UpdateProducts} />}
           ></Route>
-          <Route path="/" element={<Protected Cmp={ProductsList} />}></Route>
+          <Route path="/" element={<Protected Cmp={ShowProducts} />}></Route>
           <Route
             path="/wikipedia"
             element={<Protected Cmp={Wikipedia} />}
+          ></Route>
+          <Route path="/api" element={<Protected Cmp={Api} />}></Route>
+          <Route path="/home" element={<Protected Cmp={Home} />}></Route>
+          <Route
+            path="/userlist"
+            element={<Protected Cmp={UserList} />}
           ></Route>
         </Routes>
       </BrowserRouter>

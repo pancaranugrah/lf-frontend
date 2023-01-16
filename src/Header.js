@@ -30,8 +30,11 @@ function Header() {
                 <Link className="navbar_link" to="/add">
                   Add Products
                 </Link>
-                <Link className="navbar_link" to="/wikipedia">
-                  Wikipedia
+                <Link className="navbar_link" to="/userlist">
+                  User
+                </Link>
+                <Link className="navbar_link" to="/api">
+                  Api Public
                 </Link>
               </Nav>
               <Nav>
