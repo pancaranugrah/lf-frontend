@@ -30,6 +30,9 @@ function Header() {
                 <Link className="navbar_link" to="/add">
                   Add Products
                 </Link>
+                <Link className="navbar_link" to="/wikipedia">
+                  Wikipedia
+                </Link>
               </Nav>
               <Nav>
                 <NavDropdown title={user && user.name}>
