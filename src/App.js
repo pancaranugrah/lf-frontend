@@ -1,0 +1,45 @@
+// import logo from './logo.svg';
+import "./App.css";
+// import { Button } from 'react-bootstrap';
+// import Header from './Header';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import * as React from "react";
+import { useParams } from "react-router-dom";
+import Login from "./Login";
+import Register from "./Register";
+import Protected from "./Protected";
+import AddProducts from "./AddProducts";
+import UpdateProducts from "./UpdateProducts";
+import ProductsList from "./ProductsList";
+import Wikipedia from "./Wikipedia";
+
+function App() {
+  function ProfilePage() {
+    // Get the userId param from the URL.
+    let { id } = useParams();
+    // ...
+  }
+
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/register" element={<Register />}></Route>
+          <Route path="/add" element={<Protected Cmp={AddProducts} />}></Route>
+          <Route
+            path="/update/:id"
+            element={<Protected Cmp={UpdateProducts} />}
+          ></Route>
+          <Route path="/" element={<Protected Cmp={ProductsList} />}></Route>
+          <Route
+            path="/wikipedia"
+            element={<Protected Cmp={Wikipedia} />}
+          ></Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
+}
+
+export default App;

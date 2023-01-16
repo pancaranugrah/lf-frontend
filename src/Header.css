@@ -1,0 +1,12 @@
+.navbar_link {
+  padding: 10px;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+.navbar_link:hover {
+  background-color: rgba(252, 255, 67, 0.925);
+  color: black;
+}
